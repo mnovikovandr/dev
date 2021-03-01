@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mnovikovandrdev 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mnovikovandrdev
+  template:
+    metadata:
+      labels:
+        app: mnovikovandrdev 
+    spec:
+      containers:
+        - name: mnovikovandrdev 
+          image: aksdevopsmn.azurecr.io/mnovikovandrdev
+          ports:
+          - containerPort: 80
